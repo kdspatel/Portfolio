@@ -1,5 +1,5 @@
 import Info from '../../components/Info';
-import Cv from '../../pdf/Kajal Resume.pdf';
+import Cv from '../../pdf/Kajal Freelancer.pdf';
 import { RiDownload2Line } from 'react-icons/ri';
 import Stats from '../../components/Stats';
 import { skill } from '../../Data';
