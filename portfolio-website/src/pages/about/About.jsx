@@ -1,0 +1,114 @@
+import Info from '../../components/Info';
+import Cv from '../../pdf/Kajal Resume.pdf';
+import { RiDownload2Line } from 'react-icons/ri';
+import Stats from '../../components/Stats';
+import { skill } from '../../Data';
+import Skillsitem from '../../components/Skillsitem';
+import { resume } from '../../Data';
+import Resumeitem from '../../components/Resumeitem';
+import './about.css';
+
+const About = () => {
+  return (
+    <main className='section container'>
+  
+      {/* About Me */}
+      <section className="about">
+
+        <h2 className="section-title">
+          About <span>Me</span>
+        </h2>
+        <div className="about-container grid">
+          <div className="about-info">
+            <h3 className="section-subtitle">Personal Infos</h3>
+
+            <ul className="info-list grid">
+              <Info/>
+            </ul>
+
+            <a href={Cv} download='' className="button">
+              Download CV
+              <span className="button-icon">
+                <RiDownload2Line/>
+              </span>
+            </a>
+
+          </div>
+
+          <div className="stats grid">
+            <Stats/>
+          </div>
+        </div>
+
+      </section>
+
+      {/* Middle Partition1 */}
+      <div className="separator"></div>
+
+      {/* My Skills */}
+      <section className="skills">
+
+        <h3 className="section-subtitle subtitle-center">My Skills</h3>
+
+        <div className="skills-container grid">
+          <div className="skills-group">
+              <h3 className="skills-title">Front-End Developer</h3>
+
+              <div className="skills-items grid">
+                {skill.map((val) => {
+                  if(val.category === 'developer') {
+                    return <Skillsitem key={val.id} {...val}/>;
+                  }
+                })}
+              </div>
+          </div>
+
+          <div className="skills-group">
+              <h3 className="skills-title">Back-End Developer</h3>
+
+              <div className="skills-items grid">
+                {skill.map((val) => {
+                  if(val.category === 'designer') {
+                    return <Skillsitem key={val.id} {...val}/>;
+                  }
+                })}
+              </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* Middle Partition2 */}
+      <div className="separator"></div>
+
+      {/* My Education */}
+      <section className="resume">
+        <h3 className="section-subtitle subtitle-center">
+          Experience & Education
+        </h3>
+
+        <div className="resume-container grid">
+          <div className="resume-group grid">
+            {resume.map((val) => {
+              if(val.category === 'fresher'){
+                return <Resumeitem key={val.id} {...val}/>;
+              }
+            })}
+          </div>
+
+          <div className="resume-group grid">
+            {resume.map((val) => {
+              if(val.category === 'education'){
+                return <Resumeitem key={val.id} {...val}/>;
+              }
+            })}
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  )
+}
+
+export default About;
