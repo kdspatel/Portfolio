@@ -11,7 +11,7 @@ import './about.css';
 const About = () => {
   return (
     <main className='section container'>
-  
+
       {/* About Me */}
       <section className="about">
 
