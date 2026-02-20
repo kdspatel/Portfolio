@@ -6,7 +6,7 @@ import './home.css';
 const Home = () => {
   return (
     <section className="home-container grid">
-      <img src={Profile} alt="profile" className="home-img" />
+      <img src={Profile} alt="profilepic" className="home-img" />
 
       <div className="home-content">
         <h1 className="home-title">
